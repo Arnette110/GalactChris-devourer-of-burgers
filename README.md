@@ -6,6 +6,7 @@ This is a restaurant app that lets users input names of burgers they would like 
 
 ## URL to application on Heroku
 
+https://sheltered-citadel-94305.herokuapp.com/
 
 ## Instructions
 
