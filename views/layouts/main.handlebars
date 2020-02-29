@@ -2,13 +2,47 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	{{!-- <link rel="stylesheet" href="/public/css/style.css" type="text/css" /> --}}
+	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css"/>
+	{{!-- <link rel="stylesheet" href="/assets/css/style.css" type="text/css" /> --}}
 	<title>GalactChris Devourer Of Burgers</title>	
-    
 </head>
 <body>
-	{{{ body }}}
+	<section class="hero is-dark">
+		<div class="hero-body">
+			<div class="container">
+		<figure class="image is-128x128">
+		<img src="/assets/images/—Pngtree—continuous line drawing of burger_5137498.png" alt="burger sketch">
+		</figure>
+		<br>
+		<h1 class="title burger">mmm... burgers!</h1>
+		{{!-- <h2 class="subtitle ">Order A Burger Now!</h2> --}}
+		<form class="create-form">
+			<div class="field has-addons is-horizontal">
+				<div class="field-body">
+				<div class="control">
+					<input type="text" class="bo input is-primary" name="burger_name" placeholder="ex: tasty burger">
+				</div>
+				<div class="control">
+					<button class="button is-primary is-outlined" type="submit">Order Now!</button>
+				</div>
+				</div>
+			</div>
+		</form>
+		
+		</div>
+		
+		</div>
+	</section>
+
+	<section>
+	<div class="container">
+	<div class="columns is-multiline">
+		{{{ body }}}
+	</div>
+	</div>
+	</section>
+
     <script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/assets/js/jsburger.js"></script>
 </body>
