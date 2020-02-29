@@ -1,40 +1,45 @@
-<div class="hero is-dark">
-    <div class="container">
-<h1 class="title">Burgers!</h1>
 
-<h2 class="subtitle">Burgers that have not been devoured!</h2>
+<div class="column is-5 is-offset-1">
+    <h1 class="subtitle is-3">Burgers to be devoured</h1>
+    <div class="container columns is-multiline">
+        {{#each burgers}}
+        <div class="container column is-6"{{#if devoured}}style="display: none" {{/if}}>
+            <ul class="content">
+                <li>
+                    <p class="has-text-success">Order #{{id}}</p>
+                    <p class="title is-uppercase is-4">{{burger_name}}</p>
+                    <div class="buttons are-small has-addons">
+                        <button class="devourBtn button is-primary is-outlined" data-id="{{id}}"  data-newDevour="{{devoured}}">DEVOUR!!!</button>
+                        <button class="delete-burger button is-danger is-outlined" data-id="{{this.id}}">DELETE!</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        {{/each}}
+    </div>
 </div>
+
+
+
+<div class="column is-5 is-offset-1">
+    <h1 class="subtitle is-3 is-centered">Burgers that have been devoured</h1>
+    <div class="container columns is-multiline">
+        {{#each burgers}}
+        <div class="container column is-6"{{#unless devoured}}style="display:none" {{/unless}}>
+            <ul class="content">
+                <li>
+                    <p class="has-text-danger">Order #{{id}}</p>
+                    <p class="title is-uppercase is-4">{{burger_name}}</p>
+                    
+                    <div class="buttons are-small has-addons">
+                        <button class="devourBtn button is-primary is-outlined" data-id="{{id}}"  data-newDevour="{{devoured}}">MORE!!!</button>
+                        <button class="delete-burger button is-danger is-outlined" data-id="{{this.id}}">DELETE!</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    {{/each}}
+    </div>
 </div>
-<div class="columns">
-<div class="container column">
-<ul>
-  {{#each burgers}}
-    <li>
-        
-        <p>ID: {{id}}</p>
-        <p>Burger to be devoured: {{burger_name}}</p>
-        
-        
-        <button class="devourBtn button" data-id="{{id}}"  data-newDevour="{{devoured}}">{{#if devoured}}ORDER AGAIN!!!{{else}}DEVOUR!!!{{/if}}</button>
-        
-        <P>WAS IT DEVOURED? {{devoured}}</P>
-    </li>
-  {{/each}}
-</ul>
-</div>
-</div>
-<h2>Burgers that have been devoured!</h2>
 
 
-
-<h2>Order a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="bo">Burger Name:</label>
-    <input type="text" class="bo" name="burger_name">
-    
-  </div>
-
-  <button type="submit">Order Now!</button>
-</form>
